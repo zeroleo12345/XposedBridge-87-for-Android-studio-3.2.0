@@ -4,7 +4,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
         minSdkVersion 15
@@ -78,7 +78,7 @@ task generateDocs(type: Javadoc, dependsOn: 'compileReleaseSources') {
         // This ensures that Javadoc can be inherited properly, but it
         // takes longer and throws a lot of errors (which we ignore here).
         def sdkSources = file("$android.sdkDirectory/sources/$android.compileSdkVersion")
-        assert sdkSources.exists()
+        //assert sdkSources.exists()
         addFileOption 'sourcepath', sdkSources
 
         failOnError = false
